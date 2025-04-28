@@ -2,10 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My First GitHub Website</title>
+  <title>Random Image Viewer</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 50px;
+    }
+    #timer {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: red;
+    }
+    #image {
+      width: 400px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    #nextButton {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
-  <h1>COOKING SOMETHING GREAT!</h1>
-  <p>check back later for more progress</p>
+
+<div id="timer">Time left: 60s</div>
+
+<img id="image" src="" alt="Random Image">
+<br>
+<button id="nextButton">Next</button>
+
+<script>
+  // List of your images
+  const images = [
+    'images/image1.jpg',
+    'images/image2.jpg',
+    'images/image3.jpg',
+    // Add more images here
+  ];
+
+  let currentIndex = 0;
+  let timer = 60; // 60 seconds
+  let timerActive = true;
+
+  // Shuffle the images
+  images.sort(() => Math.random() - 0.5);
+
+  // Show first image
+  document.getElementById('image').src = images[currentIndex];
+
+  // Function to go to next image
+  document.getElementById('nextButton').addEventListener('click', function() {
+    if (!timerActive) return; // If timer ended, do nothing
+
+    currentIndex++;
+    if (currentIndex >= images.length) {
+      currentIndex = 0; // Loop back to first
+    }
+    document.getElementById('image').src = images[currentIndex];
+  });
+
+  // Countdown timer
+  setInterval(function() {
+    if (timer > 0) {
+      timer--;
+      document.getElementById('timer').innerText = "Time left: " + timer + "s";
+    } else {
+      timerActive = false;
+      document.getElementById('timer').innerText = "Time's up!";
+    }
+  }, 1000);
+</script>
+
 </body>
 </html>
