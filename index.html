@@ -34,31 +34,32 @@
 <button id="nextButton">Next</button>
 
 <script>
-  // List of your images
-  const images = [
-    'images/image1.jpg',
-    'images/image2.jpg',
-    'images/image3.jpg',
-    // Add more images here
-  ];
+  // How many images you have
+  const numberOfImages = 5; // <<-- Change this to match how many images you have
+
+  // Create the list automatically
+  const images = [];
+  for (let i = 1; i <= numberOfImages; i++) {
+    images.push(`images/image${i}.jpg`);
+  }
 
   let currentIndex = 0;
   let timer = 60; // 60 seconds
   let timerActive = true;
 
-  // Shuffle the images
+  // Shuffle the images randomly
   images.sort(() => Math.random() - 0.5);
 
-  // Show first image
+  // Show the first image
   document.getElementById('image').src = images[currentIndex];
 
-  // Function to go to next image
+  // When clicking next button
   document.getElementById('nextButton').addEventListener('click', function() {
-    if (!timerActive) return; // If timer ended, do nothing
+    if (!timerActive) return; // Stop if time is over
 
     currentIndex++;
     if (currentIndex >= images.length) {
-      currentIndex = 0; // Loop back to first
+      currentIndex = 0; // Loop back to first image
     }
     document.getElementById('image').src = images[currentIndex];
   });
@@ -74,6 +75,7 @@
     }
   }, 1000);
 </script>
+
 
 </body>
 </html>
