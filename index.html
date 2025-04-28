@@ -35,13 +35,13 @@
 
   
 <script>
-  // Manually list all your Imgur image URLs
-  const images = [
-    'https://i.imgur.com/MEIxrsv.png',
-    'https://i.imgur.com/QAlhMn6.png',
-    'https://i.imgur.com/j9cCybI.png',
-    // Add more image links here
-  ];
+  const numberOfImages = 17; // Total number of images
+  const baseURL = 'https://AlphaRax127.github.io/poke_reciter/images/';
+
+  const images = [];
+  for (let i = 2; i <= numberOfImages; i++) {
+    images.push(`${baseURL}image${i}.png`);
+  }
 
   let currentIndex = 0;
   let timer = 60;
@@ -75,6 +75,7 @@
     }
   }, 1000);
 </script>
+
 
   
 </body>
