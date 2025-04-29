@@ -7,3 +7,4 @@
 <br>
 <br> # To-Do List
 <br> • Add Pokemon related CSS.
+<br> • Add all pokemon pics.
