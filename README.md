@@ -1,7 +1,9 @@
 # poke_reciter
-https://alpharax127.github.io/poke_reciter/
+• Access Here - https://alpharax127.github.io/poke_reciter/
+<br>
 <br> # Known Bugs
-All images are not loading.
-Position of NEXT button keeps changing.
+<br> • All images are not loading.
+<br> • Position of NEXT button keeps changing.
+<br>
 <br> # To-Do List
-Add Pokemon related CSS.
+<br> • Add Pokemon related CSS.
